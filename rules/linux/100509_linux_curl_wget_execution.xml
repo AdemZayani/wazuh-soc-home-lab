@@ -1,0 +1,14 @@
+<group name="local,">
+
+  <!-- curl or wget executed (auditd execve events, built-in rule 80792)-->
+  <rule id="100509" level="10">
+    <if_sid>80700</if_sid>
+    <field name="audit.execve.a0" type="pcre2">^(curl|wget)$</field>
+    <description>Linux download tool executed: $(audit.execve.a0)</description>
+    <mitre>
+      <id>T1105</id>
+    </mitre>
+    <group>linux,execution,command_and_control,</group>
+  </rule>
+
+</group>

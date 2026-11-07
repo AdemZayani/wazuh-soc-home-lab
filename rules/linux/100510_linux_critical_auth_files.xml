@@ -1,0 +1,15 @@
+<group name="local,">
+
+  <!-- Critical authentication files modified -->
+  <rule id="100510" level="12">
+    <if_sid>550</if_sid>
+    <field name="file" type="pcre2">^/etc/(passwd|shadow|sudoers)$</field>
+    <description>Critical Linux authentication file modified: $(file)</description>
+    <mitre>
+      <id>T1098</id>
+      <id>T1548.003</id>
+    </mitre>
+    <group>linux,credential_access,account_modification,</group>
+  </rule>
+
+</group>

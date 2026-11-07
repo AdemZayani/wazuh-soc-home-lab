@@ -1,0 +1,14 @@
+<group name="local,">
+
+  <!-- SSH authorized_keys added or modified -->
+  <rule id="100507" level="10">
+    <if_sid>550,554</if_sid>
+    <field name="file" type="pcre2">authorized_keys$</field>
+    <description>SSH authorized_keys changed: $(file)</description>
+    <mitre>
+        <id>T1098.004</id>
+    </mitre>
+    <group>linux,persistence,credential_access,</group>
+  </rule>
+
+</group>

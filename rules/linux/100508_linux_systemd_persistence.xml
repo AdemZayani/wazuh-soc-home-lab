@@ -1,0 +1,14 @@
+<group name="local,">
+
+  <!-- Systemd unit files added or modified -->
+  <rule id="100508" level="10">
+    <if_sid>550,554</if_sid>
+    <field name="file" type="pcre2">^/etc/systemd/system/</field>
+    <description>Linux systemd persistence file changed: $(file)</description>
+    <mitre>
+      <id>T1543.002</id>
+    </mitre>
+    <group>linux,persistence,</group>
+  </rule>
+
+</group>

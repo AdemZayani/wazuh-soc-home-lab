@@ -1,0 +1,13 @@
+<group name="local,">
+
+  <!-- Sudo to root -->
+  <rule id="100501" level="10">
+    <if_sid>5402</if_sid>
+    <description>Linux privilege escalation: user became root using sudo</description>
+    <mitre>
+      <id>T1548.003</id>
+    </mitre>
+    <group>linux,privilege_escalation,</group>
+  </rule>
+
+</group>

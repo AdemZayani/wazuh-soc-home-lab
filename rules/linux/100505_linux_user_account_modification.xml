@@ -1,0 +1,13 @@
+<group name="local,">
+
+  <!-- Linux user created or modified -->
+  <rule id="100505" level="10">
+    <if_sid>5902</if_sid>
+    <description>Linux user account created or modified</description>
+    <mitre>
+      <id>T1136.001</id>
+    </mitre>
+    <group>linux,account_modification,</group>
+  </rule>
+
+</group>
