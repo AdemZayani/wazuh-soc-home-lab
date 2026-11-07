@@ -1,0 +1,16 @@
+<group name="local,">
+
+  <!-- Account created, enabled, password reset, disabled or deleted -->
+  <rule id="100401" level="10">
+    <if_sid>60103,60109,60111</if_sid>
+    <field name="win.system.eventID" type="pcre2">^(4720|4722|4724|4725|4726)$</field>
+    <description>Windows account modification: $(win.eventdata.targetUserName) by $(win.eventdata.subjectUserName)</description>
+    <mitre>
+      <id>T1136.001</id>
+      <id>T1098</id>
+      <id>T1531</id>
+    </mitre>
+    <group>windows,account_modification,</group>
+  </rule>
+
+</group>

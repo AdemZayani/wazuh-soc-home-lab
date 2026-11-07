@@ -1,0 +1,13 @@
+<group name="local,">
+
+  <!-- Scheduled task created -->
+  <rule id="100404" level="10">
+    <if_sid>60228</if_sid>
+    <description>Scheduled task created: $(win.eventdata.taskName)</description>
+    <mitre>
+      <id>T1053.005</id>
+    </mitre>
+    <group>windows,persistence,</group>
+  </rule>
+
+</group>

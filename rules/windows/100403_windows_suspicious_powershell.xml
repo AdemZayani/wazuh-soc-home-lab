@@ -1,0 +1,16 @@
+<group name="local,">
+
+  <!-- Suspicious PowerShell command line (Sysmon event 1) -->
+  <rule id="100403" level="12">
+    <if_group>sysmon_eid1_detections</if_group>
+    <field name="win.eventdata.commandLine" type="pcre2">(?i)(powershell|pwsh).*?(IEX|Invoke-Expression|DownloadString|DownloadFile|Net\.WebClient|Invoke-WebRequest)</field>
+    <description>Suspicious PowerShell execution: $(win.eventdata.commandLine)</description>
+    <mitre>
+      <id>T1059.001</id>
+      <id>T1027</id>
+      <id>T1105</id>
+    </mitre>
+    <group>windows,powershell,suspicious_execution,</group>
+  </rule>
+
+</group>

@@ -1,0 +1,14 @@
+<group name="local,">
+
+  <!-- Privileged group membership -->
+  <rule id="100402" level="12">
+    <if_sid>60154</if_sid>
+    <description>Privileged group membership changed: $(win.eventdata.memberSid) added to $(win.eventdata.targetUserName)</description>
+    <mitre>
+      <id>T1098</id>
+      <id>T1078</id>
+    </mitre>
+    <group>windows,privilege_escalation,account_modification,</group>
+  </rule>
+
+</group>
